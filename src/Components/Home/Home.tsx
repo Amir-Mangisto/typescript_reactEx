@@ -1,6 +1,10 @@
 import React from "react";
+import {User} from "../../models/IUser/IUser";
+
 
 export default function Home() {
+    let muUser:User ={firstName:"asasa",lastName:"sca",age:62};
+
   let age: number;
   let myName: string;
   let isInClass: boolean;
@@ -76,9 +80,9 @@ export default function Home() {
     return min + myName;
   };
   //15
-  const GetNameAndNames = (oneName:string,...allNames:string[]):string=>{
+//   const GetNameAndNames = (oneName:string,...allNames:string[]):string=>{
     
-  }
+//   }
 
   return (
     <div>
@@ -90,7 +94,8 @@ export default function Home() {
       {/* {GetTeacherAndStudent("tal","ben","matan")} */}
       {/* {GetDetails("lola",undefined,50,"xsasa","acc","sdacsa")} */}
       {/* {GetNumbers(100, 400, 80, 800)} */}
-      {NameAndNumber("avi",15,2,3)}
+      {/* {NameAndNumber("avi",15,2,3)} */}
+      {muUser.firstName + muUser.age + muUser.lastName}
     </div>
   );
 }
