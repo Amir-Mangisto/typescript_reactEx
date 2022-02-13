@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './Components/Home/Home';
+import Student from './Components/Student/Student';
 
 function App() {
   let title:string ="hello world";
@@ -15,8 +16,9 @@ function App() {
     <div className="App">
       {/* {title} */}
       {/* <button onClick={()=>ClickHandler("amir",undefined,"good day","asi","lop","mop")}>click</button> */}
-      
-      <Home/>
+
+      {/* <Home/> */}
+      <Student/>
     </div>
   );
 }
