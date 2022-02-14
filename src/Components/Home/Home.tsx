@@ -1,9 +1,8 @@
 import React from "react";
-import {User} from "../../models/IUser/IUser";
-
+import { User } from "../../models/IUser/IUser";
 
 export default function Home() {
-    let muUser:User ={firstName:"asasa",lastName:"sca",age:62};
+  let muUser: User = { firstName: "asasa", lastName: "sca", age: 62 };
 
   let age: number;
   let myName: string;
@@ -80,9 +79,76 @@ export default function Home() {
     return min + myName;
   };
   //15
-//   const GetNameAndNames = (oneName:string,...allNames:string[]):string=>{
-    
-//   }
+  const GetNameAndNames = (oneName: string, ...allNames: string[]): string => {
+    for (let i: number = 0; i < allNames.length; i++) {
+      if (oneName == allNames[i]) {
+        return "this name appear two times";
+      }
+    }
+    return oneName;
+  };
+  //16
+  const GetClassAndNAmes = (
+    gradeNumber?: number,
+    ...gradeNames: string[]
+  ): any => {
+    if (!gradeNumber) {
+      return "asc";
+    } else {
+      gradeNames.sort();
+      console.log(gradeNames);
+    }
+  };
+  const Task17 = (num: number = 3): any => {
+    let number:number = 0;
+    let arr: number[] = [
+      Math.floor(Math.random() * 10),
+      Math.floor(Math.random() * 10),
+      Math.floor(Math.random() * 10),
+      Math.floor(Math.random() * 10),
+      Math.floor(Math.random() * 10),
+    ];
+    arr.forEach((item)=>{
+      if (num == item) {
+        number++;
+        console.log(`number exist ${number}`);        
+      }
+    })   
+  };
+  const Task18 = (...obg:object[]):void=>{
+    console.log(obg);  
+  }
+//  Task18({name:"amir",Age:12},{name:"amir",Age:12},{name:"amir",Age:12});
+
+ type SomeType ={
+   firstName:string;
+   lastNAme:string;
+   age:number;
+ }
+ const Task19 = (...obgs:SomeType[]):void=>{
+  let maxAge:SomeType = obgs[0];
+  for (const item of obgs) {
+    if (item.age > maxAge.age) {
+      maxAge = item;
+    }
+  }
+  console.log(maxAge);
+  
+ }
+//  Task19({firstName:"bhjsdac",lastNAme:"ajkx",age:26},{firstName:"bhjsdac",lastNAme:"ajkx",age:36},{firstName:"bhjsdac",lastNAme:"ajkx",age:86});
+
+ const Task20 = (myName:string,...myObject:SomeType[]):any=>{
+  for (const myItem of myObject) {
+    if(myName == myItem.firstName ){
+      return "appear"
+    }
+    else{ 
+      return "not appear"
+    }
+  }
+ }
+ console.log( Task20("shimon",{firstName:"shimon",lastNAme:"ajkx",age:26}));
+ 
 
   return (
     <div>
@@ -95,7 +161,12 @@ export default function Home() {
       {/* {GetDetails("lola",undefined,50,"xsasa","acc","sdacsa")} */}
       {/* {GetNumbers(100, 400, 80, 800)} */}
       {/* {NameAndNumber("avi",15,2,3)} */}
-      {muUser.firstName + muUser.age + muUser.lastName}
+      {/* {muUser.firstName + muUser.age + muUser.lastName} */}
+      {/* {GetNameAndNames("oshri","amir","shimi","oshri","oshri")} */}
+      {/* {GetClassAndNAmes(5, "amir", "shimi", "ermias", "oshri")} */}
+      {/* {Task17(7)} */}
+      {}
+      
     </div>
   );
 }

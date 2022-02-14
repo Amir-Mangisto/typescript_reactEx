@@ -17,8 +17,8 @@ function App() {
       {/* {title} */}
       {/* <button onClick={()=>ClickHandler("amir",undefined,"good day","asi","lop","mop")}>click</button> */}
 
-      {/* <Home/> */}
-      <Student/>
+      <Home/>
+      {/* <Student/> */}
     </div>
   );
 }
