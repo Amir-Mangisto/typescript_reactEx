@@ -1,26 +1,23 @@
-import React from "react";
-
 export default function Loterry() {
   const Task26 = (): void => {
-      let userName = prompt("insert name");
-      let counter: number = 0;
-      let Nums: number[] = [];
-      
-      while (counter < 10) {
-      let userNumber: number = Number(prompt("insert number"));
-      if (
-        Nums.indexOf(userNumber) == -1 &&
-        userNumber < 100 &&
-        userNumber >= 1
-      ) {
-        Nums.push(userNumber);
-        console.log(userName);
-        
+    let counter: number = 0;
+    let Nums: number[] = [];
+
+    while (counter < 10) {
+      let random: number = Math.floor(Math.random() * 10);
+      if (Nums.indexOf(random) == -1 && random < 100 && random >= 1) {
+        Nums.push(random);
         counter++;
       }
     }
+    console.log(Nums);
+                
   };
 //   Task26();
+
+const TAsk27 = ()=>{
+
+}
 
   return (
     <div>
